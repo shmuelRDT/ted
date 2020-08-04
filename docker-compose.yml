@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+    jenkins:
+        build: jenkins/jenkins:latest
+        container_name: jenkins
+        volumes: 
+            - jenkins-data-x:/var/jenkins_home
+
+        ports: 
+            - 8080:8080
+            - 50000:50000
+
+volumes:
+    jenkins-data-x:
